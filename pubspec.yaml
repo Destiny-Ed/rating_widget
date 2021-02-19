@@ -2,7 +2,7 @@ name: rating_widget
 description: A simple and customizable Flutter rating widget package written in dart.
 version: 0.0.1
 # author:
-homepage:
+homepage: https://github.com/Destiny-Ed/rating_widget
 
 environment:
   sdk: ">=2.7.0 <3.0.0"

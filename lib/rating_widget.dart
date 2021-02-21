@@ -12,6 +12,7 @@ class Rating extends StatefulWidget {
   final Function(int) onRatingSelected;
   final Color unSelectedColor;
   final Color selectedColor;
+  final double iconSize;
   final bool horizontal;
   final IconData selectedIcon;
   final IconData unSelectedIcon;
@@ -22,6 +23,7 @@ class Rating extends StatefulWidget {
       this.onRatingSelected,
       this.selectedColor,
       this.unSelectedColor,
+      this.iconSize = 24.0,
       this.horizontal = true,
       this.initialRating = 1,
       this.unSelectedIcon,
@@ -67,10 +69,16 @@ class _RatingState extends State<Rating> {
                     widget.onRatingSelected(_currentStar);
                   },
                   child: index < _currentStar
-                      ? Icon(widget.selectedIcon ?? Icons.star,
-                          color: widget.selectedColor ?? Colors.black)
-                      : Icon(widget.unSelectedIcon ?? Icons.star_border,
-                          color: widget.unSelectedColor),
+                      ? Icon(
+                          widget.selectedIcon ?? Icons.star,
+                          color: widget.selectedColor ?? Colors.black,
+                          size: widget.iconSize,
+                        )
+                      : Icon(
+                          widget.unSelectedIcon ?? Icons.star_border,
+                          color: widget.unSelectedColor,
+                          size: widget.iconSize,
+                        ),
                 );
               },
             ),
@@ -90,10 +98,16 @@ class _RatingState extends State<Rating> {
                     widget.onRatingSelected(_currentStar);
                   },
                   child: index < _currentStar
-                      ? Icon(widget.selectedIcon ?? Icons.star,
-                          color: widget.selectedColor ?? Colors.black)
-                      : Icon(widget.unSelectedIcon ?? Icons.star_border,
-                          color: widget.unSelectedColor),
+                      ? Icon(
+                          widget.selectedIcon ?? Icons.star,
+                          color: widget.selectedColor ?? Colors.black,
+                          size: widget.iconSize,
+                        )
+                      : Icon(
+                          widget.unSelectedIcon ?? Icons.star_border,
+                          color: widget.unSelectedColor,
+                          size: widget.iconSize,
+                        ),
                 );
               },
             ),

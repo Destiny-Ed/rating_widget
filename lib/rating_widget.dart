@@ -9,18 +9,18 @@ dikeachaeze@gmail.com
 
 class Rating extends StatefulWidget {
   final int rating;
-  final Function(int) onRatingSelected;
-  final Color unSelectedColor;
-  final Color selectedColor;
+  final Function(int?) onRatingSelected;
+  final Color? unSelectedColor;
+  final Color? selectedColor;
   final double iconSize;
   final bool horizontal;
-  final IconData selectedIcon;
-  final IconData unSelectedIcon;
+  final IconData? selectedIcon;
+  final IconData? unSelectedIcon;
   final int initialRating;
 
   Rating(
       {this.rating = 6,
-      this.onRatingSelected,
+      required this.onRatingSelected,
       this.selectedColor,
       this.unSelectedColor,
       this.iconSize = 24.0,
@@ -38,7 +38,7 @@ class Rating extends StatefulWidget {
 }
 
 class _RatingState extends State<Rating> {
-  int _currentStar;
+  int? _currentStar;
 
   @override
   void initState() {
@@ -68,7 +68,7 @@ class _RatingState extends State<Rating> {
                     //OnRatingSelected returns the _currentStar selected by User
                     widget.onRatingSelected(_currentStar);
                   },
-                  child: index < _currentStar
+                  child: index < _currentStar!
                       ? Icon(
                           widget.selectedIcon ?? Icons.star,
                           color: widget.selectedColor ?? Colors.black,
@@ -97,7 +97,7 @@ class _RatingState extends State<Rating> {
                     //OnRatingSelected send _currentStar selected to User
                     widget.onRatingSelected(_currentStar);
                   },
-                  child: index < _currentStar
+                  child: index < _currentStar!
                       ? Icon(
                           widget.selectedIcon ?? Icons.star,
                           color: widget.selectedColor ?? Colors.black,
